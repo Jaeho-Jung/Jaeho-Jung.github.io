@@ -1,0 +1,351 @@
+---
+title: "Markdown 기초 문법"
+description: "Markdown 소개 및 기초 문법 정리"
+author: "Jaeho Jung"
+date: "2023/9/15"
+categories:
+    - markdown
+    - guide
+    - syntax
+---
+
+## 개요
+
+### 마크다운이란?
+
+**마크다운(Markdown)**은 마크업 언어(Markup Language)의 일종으로, 2004년에 존 그루버(John Gruber)가 만들었다. 일반 텍스트로 서식이 있는 문서를 작성하는 데에 사용되며, 문법이 간단하여 읽고 쓰기 쉽다.
+
+:::{.callout-note}
+파일 확장자는 `.md`, `.markdown`이다.
+:::
+
+### 마크다운 언어를 사용하는 이유
+
+1. `Versatile`: 마크다운은 웹사이트, 문서, 노트, 책, 프레젠테이션, 이메일 메시지 및 기술 문서 작성 등 다양한 용도로 사용할 수 있다.
+
+2. `Portable`: 마크다운 형식의 텍스트 파일은 거의 모든 응용 프로그램에서 열 수 있다.
+
+3. `Platform independent`: 모든 운영 체제에서 마크다운 형식 텍스트를 생성할 수 있다.
+
+4. `Future-Proof`: 애플리케이션이 작동을 멈춘다 하더라도 텍스트 편집 애플리케이션을 사용하여 마크다운 형식의 텍스트를 계속 읽을 수 있다.
+
+5. `Support`: Reddit, GitHub 등 많은 데스크탑과 웹 기반 애플리케이션에서 마크다운을 지원한다.
+
+## 문법
+
+### 제목(Headings)
+
++-----------------+-----------------------------------+
+| Markdown 문법   | 출력                               |
++=================+===================================+
+| ``` markdown    | # 제목 1 {.heading-output}         |
+| # 제목 1        |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ## 제목 2 {.heading-output}        |
+| ## 제목 2       |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ### 제목 3 {.heading-output}       |
+| ### 제목 3      |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | #### 제목 4 {.heading-output}      |
+| #### 제목 4     |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ##### 제목 5 {.heading-output}     |
+| ##### 제목 5    |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+| ``` markdown    | ###### 제목 6 {.heading-output}    |
+| ###### 제목 6   |                                   |
+| ```             |                                   |
++-----------------+-----------------------------------+
+
+### 텍스트 포맷(Text Formatting)
+
++-----------------------------------------+-----------------------------------------+
+| Markdown 문법                           | 출력                                     |
++=========================================+=========================================+
+| ```markdown                             | *italics*, **bold**, ***bold italics*** |
+|*이탤릭체*, **굵게**, ***굵은 이탤릭체***|                                             |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            | superscript^2^ / subscript~2~           |
+| 위 첨자^2^ / 아래 첨자~2~               |                                           |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            | ~~strikethrough~~                       |
+| ~~취소선~~                              |                                          |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+| ``` markdown                            | `verbatim code`                         |
+| `코드 강조`                             |                                          |
+| ```                                     |                                         |
++-----------------------------------------+-----------------------------------------+
+
+### 목록(Lists)
+
+#### 1. 순서 있는 목록
+
+목록 숫자는 1로 시작해야 하며, 오름차순이 아니어도 된다.
+
++-------------------------+-------------------------+
+| Markdown 문법           | 출력                     |
++=========================+=========================+
+| ```markdown             | 1. First item           |
+| 1. First item           | 2. Second item          |
+| 2. Second item          | 3. Third item           |
+| 3. Third item           |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+| ```markdown             | 1. First item           |
+| 1. First item           | 1. Second item          |
+| 1. Second item          | 1. Third item           |
+| 1. Third item           |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+| ```markdown             | 1. First item           |
+| 1. First item           | 8. Second item          |
+| 8. Second item          | 5. Third item           |
+| 5. Third item           |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+| ```markdown             | 1. First item           |
+| 1. First item           | 2. Second item          |
+| 2. Second item          |     1. Indent item      |
+|     1. Indented item    |     2. Indent item      |
+|     2. Indented item    | 3. Third item           |
+| 3. Third item           |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+
+---
+
+#### 2. 순서 없는 목록
+
+`-`,`*`,`+`을 사용하여 순서 없는 목록을 생성할 수 있다.
+
++-------------------------+-------------------------+
+| Markdown 문법           | 출력                     |
++=========================+=========================+
+| ```markdown             | - First item            |
+| - First item            | - Second item           |
+| - Second item           | - Third item            |
+| - Third item            |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+| ```markdown             | * First item            |
+| * First item            | * Second item           |
+| * Second item           | * Third item            |
+| * Third item            |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+| ```markdown             | + First item            |
+| + First item            | + Second item           |
+| + Second item           | + Third item            |
+| + Third item            |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+| ```markdown             | - First item            |
+| - First item            | - Second item           |
+| - Second item           |     - Indent item       |
+|     - Indented item     |     - Indent item       |
+|     - Indented item     | - Third item            |
+| - Third item            |                         |
+|```                      |                         |
++-------------------------+-------------------------+
+
+---
+
+#### 3. 목록에 요소(Element) 추가
+
+목록에 다른 요소를 추가하려면 요소 앞에 들여쓰기 4칸을 삽입한다.
+```markdown
+* First item
+* Second item
+    - Indented item
+
+        > Blockquote
+    
+    - Indented item
+* Third item
+```
+* First item
+* Second item
+    - Indented item
+
+        > Blockquote
+    
+    - Indented item
+* Third item
+
+---
+
+### 블록(Blocks)
+
+#### 1. 코드 블록(Code Blocks)
+
+##### Fenced Code Blocks
+
+코드 위와 아래를 ```` ``` ```` 또는 `~~~`로 감싸 코드 블럭을 만들 수 있다.
+
+````markdown
+```
+a = 5
+if a % 2 == 0:
+  print("even")
+else:
+  print("odd")
+```
+````
+```
+a = 5
+if a % 2 == 0:
+  print("even")
+else:
+  print("odd")
+```
+
+##### 구문 강조(Syntax Highlighting)
+
+구문 강조를 위해서 첫 ```` ``` ```` 뒤에 코드 작성에 사용된 언어를 적는다.
+
+````markdown
+```python
+a = 5
+if a % 2 == 0:
+  print("even")
+else:
+  print("odd")
+```
+````
+```python
+a = 5
+if a % 2 == 0:
+  print("even")
+else:
+  print("odd")
+```
+
+---
+
+#### 2. 인용문 블록(Blockquotes)
+
+```markdown
+> Blockquotes
+```
+> Blockquotes
+
+```markdown
+> Blockquotes
+>
+> with Multiple Paragraphs
+```
+> Blockquotes
+>
+> with Multiple Paragraphs
+
+```markdown
+> Blockquotes
+>
+>> Nested Blockquotes
+```
+> Blockquotes
+>
+>> Nested Blockquotes
+
+```markdown
+> #### Headings
+>
+> - Unordered Lists
+> - Unordered Lists
+>
+> *italics* **bold**
+```
+> ##### Headings
+>
+> - Unordered Lists
+> - Unordered Lists
+>
+> *italics* **bold**
+
+---
+
+
+#### 3. 콜아웃 블록(Callout Blocks)
+
+5종류의 콜아웃이 존재한다.
+
+``` markdown
+:::{.callout-note}
+note
+:::
+:::{.callout-warning}
+warning
+:::
+:::{.callout-important}
+imortant
+:::
+:::{.callout-tip}
+tip
+:::
+:::{.callout-caution}
+caution
+:::
+```
+:::{.callout-note}
+note
+:::
+:::{.callout-warning}
+warning
+:::
+:::{.callout-important}
+imortant
+:::
+:::{.callout-tip}
+tip
+:::
+:::{.callout-caution}
+caution
+:::
+
+### 링크 & 이미지(Links & Images)
+
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+| Markdown 문법                                                          | 출력                                                                    |
++========================================================================+========================================================================+
+| ```markdown                                                            | <https://jaeho-jung.github.io/>                                        |
+| <https://jaeho-jung.github.io/>                                        |                                                                        |
+| ```                                                                    |                                                                        |
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+| ```markdown                                                            | [Jaeho-Jung's Blog](https://jaeho-jung.github.io/)                     |
+| [Jaeho-Jung's Blog](https://jaeho-jung.github.io/)                     |                                                                        |
+| ```                                                                    |                                                                        |
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+| ```markdown                                                            | ![Caption](markdown.svg)                                               |
+| ![Caption](markdown.svg)                                               |                                                                        |
+| ```                                                                    |                                                                        |
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+| ```markdown                                                            | [![Caption](markdown.svg)](https://jaeho-jung.github.io/)              |
+| [![Caption](markdown.svg)](https://jaeho-jung.github.io/)              |                                                                        |
+| ```                                                                    |                                                                        |
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+| ```markdown                                                            | [![Caption](markdown.svg)](https://jaeho-jung.github.io/)              |
+| [![Caption](markdown.svg)](https://jaeho-jung.github.io/)              |                                                                        |
+| ```                                                                    |                                                                        |
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+| ```markdown                                                            | [![](markdown.svg){fig-alt="Alt text"}](https://jaeho-jung.github.io/) |
+| [![](markdown.svg){fig-alt="Alt text"}](https://jaeho-jung.github.io/) |                                                                        |
+| ```                                                                    |                                                                        |
++------------------------------------------------------------------------+------------------------------------------------------------------------+
+
+---
+
+## References
+<https://www.markdownguide.org/getting-started/>\
+<https://www.markdownguide.org/basic-syntax/>\
+<https://www.markdownguide.org/extended-syntax/#fenced-code-blocks>\
+<https://quarto.org/docs/authoring/markdown-basics.html>\
+<https://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4>\
