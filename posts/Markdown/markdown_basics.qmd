@@ -1,8 +1,7 @@
 ---
 title: "Markdown 기초 문법"
 description: "Markdown 소개 및 기초 문법 정리"
-author: "Jaeho Jung"
-date: "2023/9/15"
+date: "2023-09-15"
 categories:
     - markdown
     - guide
@@ -273,7 +272,7 @@ else:
 
 ---
 
-
+<!-- 
 #### 3. 콜아웃 블록(Callout Blocks)
 
 5종류의 콜아웃이 존재한다.
@@ -309,7 +308,7 @@ tip
 :::
 :::{.callout-caution}
 caution
-:::
+::: -->
 
 ### 링크 & 이미지(Links & Images)
 
