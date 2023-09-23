@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Markdown/markdown_basics.html"
+      "/posts/Markdown/markdown_basics.html",
+      "/posts/Crawler/crawler.html",
+      "/posts/Crawler/music_serach_engine.html"
     ]
   }
 ]
