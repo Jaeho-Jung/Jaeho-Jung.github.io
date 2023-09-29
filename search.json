@@ -39,7 +39,7 @@
     "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#references",
     "title": "Github에 SSH key 등록하기 for Windows",
     "section": "References",
-    "text": "References\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+    "text": "References\nhttps://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
   },
   {
     "objectID": "index.html",
