@@ -18,7 +18,7 @@
     "href": "posts/Markdown/markdown_basics.html#문법",
     "title": "Markdown 기초 문법",
     "section": "문법",
-    "text": "문법\n\n제목(Headings)\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n# 제목 1\n제목 1\n\n\n## 제목 2\n제목 2\n\n\n### 제목 3\n제목 3\n\n\n#### 제목 4\n제목 4\n\n\n##### 제목 5\n제목 5\n\n\n###### 제목 6\n제목 6\n\n\n\n\n\n텍스트 포맷(Text Formatting)\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n*이탤릭체*, **굵게**, ***굵은 이탤릭체***\nitalics, bold, bold italics\n\n\n위 첨자^2^ / 아래 첨자~2~\nsuperscript2 / subscript2\n\n\n~~취소선~~\nstrikethrough\n\n\n`코드 강조`\nverbatim code\n\n\n\n\n\n목록(Lists)\n\n1. 순서 있는 목록\n목록 숫자는 1로 시작해야 하며, 오름차순이 아니어도 된다.\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n1. First item\n2. Second item\n3. Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n1. First item\n1. Second item\n1. Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n1. First item\n8. Second item\n5. Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n1. First item\n2. Second item\n    1. Indented item\n    2. Indented item\n3. Third item\n\nFirst item\nSecond item\n\nIndent item\nIndent item\n\nThird item\n\n\n\n\n\n\n\n2. 순서 없는 목록\n-,*,+을 사용하여 순서 없는 목록을 생성할 수 있다.\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n- First item\n- Second item\n- Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n* First item\n* Second item\n* Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n+ First item\n+ Second item\n+ Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n- First item\n- Second item\n    - Indented item\n    - Indented item\n- Third item\n\nFirst item\nSecond item\n\nIndent item\nIndent item\n\nThird item\n\n\n\n\n\n\n\n3. 목록에 요소(Element) 추가\n목록에 다른 요소를 추가하려면 요소 앞에 들여쓰기 4칸을 삽입한다.\n* First item\n* Second item\n    - Indented item\n\n        &gt; Blockquote\n    \n    - Indented item\n* Third item\n\nFirst item\nSecond item\n\nIndented item\n\nBlockquote\n\nIndented item\n\nThird item\n\n\n\n\n\n블록(Blocks)\n\n1. 코드 블록(Code Blocks)\n\nFenced Code Blocks\n코드 위와 아래를 ``` 또는 ~~~로 감싸 코드 블럭을 만들 수 있다.\n```\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n```\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n\n\n구문 강조(Syntax Highlighting)\n구문 강조를 위해서 첫 ``` 뒤에 코드 작성에 사용된 언어를 적는다.\n```python\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n```\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n\n\n\n\n2. 인용문 블록(Blockquotes)\n&gt; Blockquotes\n\nBlockquotes\n\n&gt; Blockquotes\n&gt;\n&gt; with Multiple Paragraphs\n\nBlockquotes\nwith Multiple Paragraphs\n\n&gt; Blockquotes\n&gt;\n&gt;&gt; Nested Blockquotes\n\nBlockquotes\n\nNested Blockquotes\n\n\n&gt; #### Headings\n&gt;\n&gt; - Unordered Lists\n&gt; - Unordered Lists\n&gt;\n&gt; *italics* **bold**\n\nHeadings\n\nUnordered Lists\nUnordered Lists\n\nitalics bold\n\n\n\n\n3. 콜아웃 블록(Callout Blocks)\n5종류의 콜아웃이 존재한다.\n:::{.callout-note}\nnote\n:::\n:::{.callout-warning}\nwarning\n:::\n:::{.callout-important}\nimortant\n:::\n:::{.callout-tip}\ntip\n:::\n:::{.callout-caution}\ncaution\n:::\n\n\n\n\n\n\nNote\n\n\n\nnote\n\n\n\n\n\n\n\n\nWarning\n\n\n\nwarning\n\n\n\n\n\n\n\n\nImportant\n\n\n\nimortant\n\n\n\n\n\n\n\n\nTip\n\n\n\ntip\n\n\n\n\n\n\n\n\nCaution\n\n\n\ncaution\n\n\n\n\n\n링크 & 이미지(Links & Images)\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n&lt;https://jaeho-jung.github.io/&gt;\nhttps://jaeho-jung.github.io/\n\n\n[Jaeho-Jung's Blog](https://jaeho-jung.github.io/)\nJaeho-Jung’s Blog\n\n\n![Caption](markdown.svg)\n\n\n\n[![Caption](markdown.svg)](https://jaeho-jung.github.io/)\n\n\n\n[![Caption](markdown.svg)](https://jaeho-jung.github.io/)\n\n\n\n[![](markdown.svg){fig-alt=\"Alt text\"}](https://jaeho-jung.github.io/)"
+    "text": "문법\n\n제목(Headings)\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n# 제목 1\n제목 1\n\n\n## 제목 2\n제목 2\n\n\n### 제목 3\n제목 3\n\n\n#### 제목 4\n제목 4\n\n\n##### 제목 5\n제목 5\n\n\n###### 제목 6\n제목 6\n\n\n\n\n\n텍스트 포맷(Text Formatting)\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n*이탤릭체*, **굵게**, ***굵은 이탤릭체***\nitalics, bold, bold italics\n\n\n위 첨자^2^ / 아래 첨자~2~\nsuperscript2 / subscript2\n\n\n~~취소선~~\nstrikethrough\n\n\n`코드 강조`\nverbatim code\n\n\n\n\n\n목록(Lists)\n\n1. 순서 있는 목록\n목록 숫자는 1로 시작해야 하며, 오름차순이 아니어도 된다.\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n1. First item\n2. Second item\n3. Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n1. First item\n1. Second item\n1. Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n1. First item\n8. Second item\n5. Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n1. First item\n2. Second item\n    1. Indented item\n    2. Indented item\n3. Third item\n\nFirst item\nSecond item\n\nIndent item\nIndent item\n\nThird item\n\n\n\n\n\n\n\n2. 순서 없는 목록\n-,*,+을 사용하여 순서 없는 목록을 생성할 수 있다.\n\n\n\n\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n- First item\n- Second item\n- Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n* First item\n* Second item\n* Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n+ First item\n+ Second item\n+ Third item\n\nFirst item\nSecond item\nThird item\n\n\n\n- First item\n- Second item\n    - Indented item\n    - Indented item\n- Third item\n\nFirst item\nSecond item\n\nIndent item\nIndent item\n\nThird item\n\n\n\n\n\n\n\n3. 목록에 요소(Element) 추가\n목록에 다른 요소를 추가하려면 요소 앞에 들여쓰기 4칸을 삽입한다.\n* First item\n* Second item\n    - Indented item\n\n        &gt; Blockquote\n    \n    - Indented item\n* Third item\n\nFirst item\nSecond item\n\nIndented item\n\nBlockquote\n\nIndented item\n\nThird item\n\n\n\n\n\n블록(Blocks)\n\n1. 코드 블록(Code Blocks)\n\nFenced Code Blocks\n코드 위와 아래를 ``` 또는 ~~~로 감싸 코드 블럭을 만들 수 있다.\n```\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n```\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n\n\n구문 강조(Syntax Highlighting)\n구문 강조를 위해서 첫 ``` 뒤에 코드 작성에 사용된 언어를 적는다.\n```python\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n```\na = 5\nif a % 2 == 0:\n  print(\"even\")\nelse:\n  print(\"odd\")\n\n\n\n\n2. 인용문 블록(Blockquotes)\n&gt; Blockquotes\n\nBlockquotes\n\n&gt; Blockquotes\n&gt;\n&gt; with Multiple Paragraphs\n\nBlockquotes\nwith Multiple Paragraphs\n\n&gt; Blockquotes\n&gt;\n&gt;&gt; Nested Blockquotes\n\nBlockquotes\n\nNested Blockquotes\n\n\n&gt; #### Headings\n&gt;\n&gt; - Unordered Lists\n&gt; - Unordered Lists\n&gt;\n&gt; *italics* **bold**\n\nHeadings\n\nUnordered Lists\nUnordered Lists\n\nitalics bold\n\n\n\n\n\n\n링크 & 이미지(Links & Images)\n\n\n\nMarkdown 문법\n출력\n\n\n\n\n&lt;https://jaeho-jung.github.io/&gt;\nhttps://jaeho-jung.github.io/\n\n\n[Jaeho-Jung's Blog](https://jaeho-jung.github.io/)\nJaeho-Jung’s Blog\n\n\n![Caption](markdown.svg)\n\n\n\n[![Caption](markdown.svg)](https://jaeho-jung.github.io/)\n\n\n\n[![Caption](markdown.svg)](https://jaeho-jung.github.io/)\n\n\n\n[![](markdown.svg){fig-alt=\"Alt text\"}](https://jaeho-jung.github.io/)"
   },
   {
     "objectID": "posts/Markdown/markdown_basics.html#references",
@@ -39,6 +39,55 @@
     "href": "index.html",
     "title": "Jaeho-Jung's blog",
     "section": "",
-    "text": "Markdown 기초 문법\n\n\n\n\n\n\n\nmarkdown\n\n\nguide\n\n\nsyntax\n\n\n\n\nMarkdown 소개 및 기초 문법 정리\n\n\n\n\n\n\nSep 15, 2023\n\n\nJaeho Jung\n\n\n\n\n\n\nNo matching items"
+    "text": "Github에 SSH key 등록하기 for Windows\n\n\n\n\n\n\n\nguide\n\n\ngithub\n\n\nssh key\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMarkdown 기초 문법\n\n\n\n\n\n\n\nguide\n\n\nmarkdown\n\n\nsyntax\n\n\n\n\nMarkdown 소개 및 기초 문법 정리\n\n\n\n\n\n\nSep 15, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "",
+    "text": "시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다.\n로컬 시스템에서 SSH (Secure Shell Protocol)를 사용하면 GitHub.com에 액세스할 수 있다. SSH를 통해 연결할 때, 로컬 시스템에 위치한 개인 키 파일을 이용해 인증한다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#목적",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#목적",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "",
+    "text": "로컬 시스템에서 SSH (Secure Shell Protocol)를 사용하면 GitHub.com에 액세스할 수 있다. SSH를 통해 연결할 때, 로컬 시스템에 위치한 개인 키 파일을 이용해 인증한다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-key-생성",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-key-생성",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "1. SSH key 생성",
+    "text": "1. SSH key 생성\n\n1.1. Git for Windows 다운로드\nhttps://gitforwindows.org/에서 Git for Windows 툴을 다운로드한다.\n\n\n1.2. SSH Key 생성\n\n1.1. 에서 다운로드 한 Git Bash를 실행한다.\n다음 명령어를 입력한다. “your_email@example.com”에는 자신의 메일을 입력한다.\n\n\nssh-keygen -t ed25519 -C \"your_email@example.com\"\n\n\n\n\n\n\nNote\n\n\n\n레거시 시스템이 Ed25519 알고리즘을 지원하지 않는다면, 다음 명령어를 입력한다.\n\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\""
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-agent에-ssh-key-등록",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-agent에-ssh-key-등록",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "2. ssh-agent에 SSH Key 등록",
+    "text": "2. ssh-agent에 SSH Key 등록\n\nssh-agent 백그라운드로 실행한다.\n\neval \"$(ssh-agent -s)\"\n\nssh-agent에 SSH Key를 등록한다.\n\nssh-add ~/.ssh/id_ed25519\n\n\n\n\n\n\nNote\n\n\n\nkey를 다른 이름으로 생성했거나, 이미 존재하는 key를 등록할 때에는 id_ed25519를 해당 key의 이름으로 바꾼다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#github-계정에-ssh-key-등록",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#github-계정에-ssh-key-등록",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "3. GitHub 계정에 SSH Key 등록",
+    "text": "3. GitHub 계정에 SSH Key 등록\n\n클립보드에 SSH 공개 키를 복사한다.\n\nclip &lt; ~/.ssh/id_ed25519.pub\n\nGitHub에서 우측 상단의 프로필 사진을 클릭하고, Settings를 클릭한다.\nAccess 섹션의 SSH and GPG keys를 클릭한다.\nNew SSH key 혹은 Add SSH key를 클릭한다.\nTitle 필드에 새로운 키에 대한 설명 레이블을 입력한다. 예를 들어 개인용 노트북을 사용하는 경우 ’Personal laptop’라고 입력한다.\nKey type을 선택한다. Signing key에 대한 자세한 내용은 “About commit signature verification.”를 참고\nKey 필드에 복사한 공개 키를 붙여넣는다.\nAdd SSH key 버튼을 누른다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#references",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#references",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "References",
+    "text": "References\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh란",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh란",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "",
+    "text": "시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다.\n로컬 시스템에서 SSH (Secure Shell Protocol)를 사용하면 GitHub.com에 액세스할 수 있다. SSH를 통해 연결할 때, 로컬 시스템에 위치한 개인 키 파일을 이용해 인증한다."
   }
 ]

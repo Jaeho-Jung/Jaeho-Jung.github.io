@@ -3,8 +3,8 @@ title: "Markdown 기초 문법"
 description: "Markdown 소개 및 기초 문법 정리"
 date: "2023-09-15"
 categories:
-    - markdown
     - guide
+    - markdown
     - syntax
 ---
 

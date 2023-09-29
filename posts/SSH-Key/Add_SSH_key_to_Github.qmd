@@ -1,0 +1,83 @@
+---
+title: "Github에 SSH key 등록하기 for Windows"
+description: ""
+date: "2023-09-29"
+categories:
+    - guide
+    - github
+    - ssh key
+---
+
+## SSH란?
+시큐어 셸(Secure SHell, **SSH**)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다. 
+
+로컬 시스템에서 
+SSH (Secure Shell Protocol)를 사용하면 GitHub.com에 액세스할 수 있다.
+SSH를 통해 연결할 때, 로컬 시스템에 위치한 개인 키 파일을 이용해 인증한다.
+
+## 1. SSH key 생성
+
+### 1.1. Git for Windows 다운로드
+
+<https://gitforwindows.org/>에서 Git for Windows 툴을 다운로드한다.
+
+### 1.2. SSH Key 생성
+
+1. [1.1.](###Git-for-Windows-다운로드) 에서 다운로드 한 `Git Bash`를 실행한다.
+2. 다음 명령어를 입력한다. "your_email@example.com"에는 자신의 메일을 입력한다.\
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
+```
+
+:::{.callout-note}
+레거시 시스템이 Ed25519 알고리즘을 지원하지 않는다면, 다음 명령어를 입력한다.\
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+:::
+
+## 2. ssh-agent에 SSH Key 등록
+
+1. ssh-agent 백그라운드로 실행한다.
+```bash
+eval "$(ssh-agent -s)"
+```
+
+2. ssh-agent에 SSH Key를 등록한다.
+```bash
+ssh-add ~/.ssh/id_ed25519
+```
+:::{.callout-note}
+key를 다른 이름으로 생성했거나, 이미 존재하는 key를 등록할 때에는 `id_ed25519`를 해당 key의 이름으로 바꾼다.
+:::
+
+## 3. GitHub 계정에 SSH Key 등록
+
+1. 클립보드에 SSH 공개 키를 복사한다.
+
+```bash
+clip < ~/.ssh/id_ed25519.pub
+```
+
+2. GitHub에서 우측 상단의 프로필 사진을 클릭하고, `Settings`를 클릭한다.
+
+3. `Access` 섹션의 `SSH and GPG keys`를 클릭한다.
+
+4. `New SSH key` 혹은 `Add SSH key`를 클릭한다.
+
+5. `Title` 필드에 새로운 키에 대한 설명 레이블을 입력한다. 예를 들어 개인용 노트북을 사용하는 경우 'Personal laptop'라고 입력한다.
+
+6. `Key type`을 선택한다. Signing key에 대한 자세한 내용은 "[About commit signature verification.](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification)"를 참고
+
+7. `Key` 필드에 복사한 공개 키를 붙여넣는다.
+
+8. `Add SSH key` 버튼을 누른다.
+
+
+## References
+
+<https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent>\
+<https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account>
