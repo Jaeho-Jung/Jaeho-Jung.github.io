@@ -1,5 +1,61 @@
 [
   {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "",
+    "text": "시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다.\n로컬 시스템에서 SSH (Secure Shell Protocol)를 사용하면 GitHub.com에 액세스할 수 있다. SSH를 통해 연결할 때, 로컬 시스템에 위치한 개인 키 파일을 이용해 인증한다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh란",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh란",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "",
+    "text": "시큐어 셸(Secure SHell, SSH)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다.\n로컬 시스템에서 SSH (Secure Shell Protocol)를 사용하면 GitHub.com에 액세스할 수 있다. SSH를 통해 연결할 때, 로컬 시스템에 위치한 개인 키 파일을 이용해 인증한다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-key-생성",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-key-생성",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "1. SSH key 생성",
+    "text": "1. SSH key 생성\n\n1.1. Git for Windows 다운로드\nhttps://gitforwindows.org/에서 Git for Windows 툴을 다운로드한다.\n\n\n1.2. SSH Key 생성\n\n1.1. 에서 다운로드 한 Git Bash를 실행한다.\n다음 명령어를 입력한다. “your_email@example.com”에는 자신의 메일을 입력한다.\n\n\nssh-keygen -t ed25519 -C \"your_email@example.com\"\n\n\n\n\n\n\nNote\n\n\n\n레거시 시스템이 Ed25519 알고리즘을 지원하지 않는다면, 다음 명령어를 입력한다.\n\nssh-keygen -t rsa -b 4096 -C \"your_email@example.com\""
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-agent에-ssh-key-등록",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#ssh-agent에-ssh-key-등록",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "2. ssh-agent에 SSH Key 등록",
+    "text": "2. ssh-agent에 SSH Key 등록\n\nssh-agent 백그라운드로 실행한다.\n\neval \"$(ssh-agent -s)\"\n\nssh-agent에 SSH Key를 등록한다.\n\nssh-add ~/.ssh/id_ed25519\n\n\n\n\n\n\nNote\n\n\n\nkey를 다른 이름으로 생성했거나, 이미 존재하는 key를 등록할 때에는 id_ed25519를 해당 key의 이름으로 바꾼다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#github-계정에-ssh-key-등록",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#github-계정에-ssh-key-등록",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "3. GitHub 계정에 SSH Key 등록",
+    "text": "3. GitHub 계정에 SSH Key 등록\n\n클립보드에 SSH 공개 키를 복사한다.\n\nclip &lt; ~/.ssh/id_ed25519.pub\n\nGitHub에서 우측 상단의 프로필 사진을 클릭하고, Settings를 클릭한다.\nAccess 섹션의 SSH and GPG keys를 클릭한다.\nNew SSH key 혹은 Add SSH key를 클릭한다.\nTitle 필드에 새로운 키에 대한 설명 레이블을 입력한다. 예를 들어 개인용 노트북을 사용하는 경우 ’Personal laptop’라고 입력한다.\nKey type을 선택한다. Signing key에 대한 자세한 내용은 “About commit signature verification.”를 참고\nKey 필드에 복사한 공개 키를 붙여넣는다.\nAdd SSH key 버튼을 누른다."
+  },
+  {
+    "objectID": "posts/SSH-Key/Add_SSH_key_to_Github.html#references",
+    "href": "posts/SSH-Key/Add_SSH_key_to_Github.html#references",
+    "title": "Github에 SSH key 등록하기 for Windows",
+    "section": "References",
+    "text": "References\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jaeho-Jung's blog",
+    "section": "",
+    "text": "Github에 SSH key 등록하기 for Windows\n\n\n\n\n\n\n\nguide\n\n\ngithub\n\n\nssh key\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMarkdown 기초 문법\n\n\n\n\n\n\n\nguide\n\n\nmarkdown\n\n\nsyntax\n\n\n\n\nMarkdown 소개 및 기초 문법 정리\n\n\n\n\n\n\nSep 15, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
     "objectID": "posts/Markdown/markdown_basics.html",
     "href": "posts/Markdown/markdown_basics.html",
     "title": "Markdown 기초 문법",
@@ -26,110 +82,5 @@
     "title": "Markdown 기초 문법",
     "section": "References",
     "text": "References\nhttps://www.markdownguide.org/getting-started/\nhttps://www.markdownguide.org/basic-syntax/\nhttps://www.markdownguide.org/extended-syntax/#fenced-code-blocks\nhttps://quarto.org/docs/authoring/markdown-basics.html\nhttps://ko.wikipedia.org/wiki/%EB%A7%88%ED%81%AC%EB%8B%A4%EC%9A%B4"
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html",
-    "href": "posts/Crawler/crawler.html",
-    "title": "Crawler란?",
-    "section": "",
-    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare\n\n\n\nWorld Wide Web 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다."
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#정의",
-    "href": "posts/Crawler/crawler.html#정의",
-    "title": "Crawler란?",
-    "section": "",
-    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare\n\n\n\nWorld Wide Web 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다."
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#역할",
-    "href": "posts/Crawler/crawler.html#역할",
-    "title": "Crawler란?",
-    "section": "역할",
-    "text": "역할\n\ndownloading pages\nfinding URLs.\n\nseeds: set of URLs given to it as parameters"
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#problems",
-    "href": "posts/Crawler/crawler.html#problems",
-    "title": "Crawler란?",
-    "section": "Problems",
-    "text": "Problems\n\n웹의 규모: 웹의 규모는 매우 크며 매 순간 생성되고 있기 때문에 얼마나 많은 웹페이지가 존재하는지 측정할 수 없다. 대부분의 조직들은 웹페이지를 저장할 수 있는 저장공간이 부족하지만 freshness를 유지하기 위해 끊임없이 새 문서들을 저장해야 한다.\n규약: 웹사이트의 주인이 크롤링을 원치 않을 수 있다."
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#정책",
-    "href": "posts/Crawler/crawler.html#정책",
-    "title": "Crawler란?",
-    "section": "정책",
-    "text": "정책"
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#규약",
-    "href": "posts/Crawler/crawler.html#규약",
-    "title": "Crawler란?",
-    "section": "규약",
-    "text": "규약\n\nrobots.txt\nhttp://www.robotstxt.org/\nThe Robots Exclusion Protocol.\n\n\n정의: 사이트나 문서에 대한 로봇들의 접근을 제어하기 위한 표준 규약이다.\n작동 방식: 로봇이 웹사이트의 URL에 접근하기 전에, 해당 웹사이트의 robots.txt 파일을 확인하여 규약에 따른다.\n위치: 웹사이트의 최상위 경로에 존재한다.\n\n\nurllib.robotparser\nhttps://docs.python.org/3/library/urllib.robotparser.html"
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#평가-방법",
-    "href": "posts/Crawler/crawler.html#평가-방법",
-    "title": "Crawler란?",
-    "section": "평가 방법",
-    "text": "평가 방법\n\nFreshness\n\n\nCoverage"
-  },
-  {
-    "objectID": "posts/Crawler/crawler.html#references",
-    "href": "posts/Crawler/crawler.html#references",
-    "title": "Crawler란?",
-    "section": "References",
-    "text": "References\n문서\nhttp://www.robotstxt.org/\nhttps://www.cloudflare.com/ko-kr/learning/bots/what-is-a-web-crawler/\nhttps://policy.naver.com/policy/search_policy.html\nhttps://en.wikipedia.org/wiki/Web_crawler\nhttps://ciir.cs.umass.edu/downloads/SEIRiP.pdf\nhttps://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=ko\n\n오픈소스 크롤러 https://help.oncrawl.com/en/articles/2767544-oncrawl-crawler-what-counts-as-a-single-url\nhttps://github.com/scrapy/scrapy/blob/2.11/scrapy/robotstxt.py\n코드\nhttps://nwpct1.hatenablog.com/entry/python-search-engine\n\n논문\nhttps://www.sciencedirect.com/science/article/abs/pii/S1389128600000578\nhttps://proceedings.neurips.cc/paper/2013/hash/b3ba8f1bee1238a2f37603d90b58898d-Abstract.html\n\n책 https://ciir.cs.umass.edu/downloads/SEIRiP.pdf"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Jaeho-Jung's blog",
-    "section": "",
-    "text": "Markdown 기초 문법\n\n\n\n\n\n\n\nmarkdown\n\n\nguide\n\n\nsyntax\n\n\n\n\nMarkdown 소개 및 기초 문법 정리\n\n\n\n\n\n\nSep 15, 2023\n\n\n\n\n\n\n  \n\n\n\n\nCrawler란?\n\n\n\n\n\n\n\ninformation retrieval\n\n\ncrawler\n\n\n\n\n\n\n\n\n\n\n\nSep 1, 2023\n\n\nJaeho Jung\n\n\n\n\n\n\n  \n\n\n\n\n[Information Retrieval] Music Search Engine\n\n\n\n\n\n\n\ninformation retrieval\n\n\n\n\n음악 검색 엔진 Informaiton Retrieval 프로젝트\n\n\n\n\n\n\nJan 1, 2023\n\n\nJaeho Jung\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/Crawler/music_serach_engine.html",
-    "href": "posts/Crawler/music_serach_engine.html",
-    "title": "[Information Retrieval] Music Search Engine",
-    "section": "",
-    "text": "Music streaming services: Spotify, Apple Music, Amazon Music, YouTube Music, etc.\nMusic databases: Discogs, MusicBrainz, AllMusic, etc.\nMusic news websites: Pitchfork, Rolling Stone, Billboard, etc.\nMusic review websites: Metacritic, RateYourMusic, etc.\nMusic social media websites: Last.fm, Reddit, Twitter, etc.\nWebsites that focus on specific genreso f music\nMusic Blogs\nMusic Forums\nLyrics website\nArtist Website\nMusic Review Aggregators\n\n수집 데이터\n\nTitle: The title of the web page or article.\nContent: The main textual content of the web page.\nURL: The URL of the web page.\nAuthor: If available, the name of the author or contributor.\nPublication Date: The date when the web page was published or last updated.\nTags or Categories: Music genres, artists, albums, or other relevant categories.\nLinks: Links to other related pages within the website or to external sources.\nImages: Thumbnails or images associated with music albums or artists.\nMetadata: Any additional metadata provided on the web page, such as Song title, artist name, album name, release date, genre, etc.\nLyrics: The lyrics to the song. Audio: The audio file of the song.\nLinks to other music pages: This will help you to discover new music and build a more comprehensive index.\n어떤 아티스트들이 같이 언급되는지\n어떤 아티스트들이 같이 투어하는지\n어떤 아티스트에 대한 관심이 느는지\n어떤 아티스트에 대한 관심이 주는지\n최신 유행 곡 탐색\n\n\n\n\n\n규정 준수\n음악 웹사이트 데이터 수집 목적으로 설계된 크롤러 사용\n저작권\n\n\n\n\n\n\n\n크롤러는 웹 페이지상의 링크를 따라가며 웹사이트를 스캔한다.\n이를 구현하기 위해서는 웹 페이지에서 URL 링크를 찾아야한다.\nHTML링크는 &lt;a href=\"URL\"와 같은 형식으로 이루어져 있다.\npython의 find() 함수와 slice 기능을 사용하여 링크 추출 기능을 구현한다.\n\nprocedure CrawlerThread(frontier)\n    while not frontier.done() do\n        website := frontier.nextSite()\n        url := website.nextURL()\n        if website.permitsCrawl(url) then\n            text := retrieveURL(url)\n            storeDocument(url, text)\n            for each url in parse(text) do\n                frontier.addURL(url)\n            end for\n        end if\n        frontier.releaseSite(website)\n    end while\nend procedure\n\ncrawl frontier: data structure used for storage of URLs eligible for crawling and supporting such operations as adding URLs and selecting for crawl."
-  },
-  {
-    "objectID": "posts/Crawler/music_serach_engine.html#정보-수집",
-    "href": "posts/Crawler/music_serach_engine.html#정보-수집",
-    "title": "[Information Retrieval] Music Search Engine",
-    "section": "",
-    "text": "Music streaming services: Spotify, Apple Music, Amazon Music, YouTube Music, etc.\nMusic databases: Discogs, MusicBrainz, AllMusic, etc.\nMusic news websites: Pitchfork, Rolling Stone, Billboard, etc.\nMusic review websites: Metacritic, RateYourMusic, etc.\nMusic social media websites: Last.fm, Reddit, Twitter, etc.\nWebsites that focus on specific genreso f music\nMusic Blogs\nMusic Forums\nLyrics website\nArtist Website\nMusic Review Aggregators\n\n수집 데이터\n\nTitle: The title of the web page or article.\nContent: The main textual content of the web page.\nURL: The URL of the web page.\nAuthor: If available, the name of the author or contributor.\nPublication Date: The date when the web page was published or last updated.\nTags or Categories: Music genres, artists, albums, or other relevant categories.\nLinks: Links to other related pages within the website or to external sources.\nImages: Thumbnails or images associated with music albums or artists.\nMetadata: Any additional metadata provided on the web page, such as Song title, artist name, album name, release date, genre, etc.\nLyrics: The lyrics to the song. Audio: The audio file of the song.\nLinks to other music pages: This will help you to discover new music and build a more comprehensive index.\n어떤 아티스트들이 같이 언급되는지\n어떤 아티스트들이 같이 투어하는지\n어떤 아티스트에 대한 관심이 느는지\n어떤 아티스트에 대한 관심이 주는지\n최신 유행 곡 탐색\n\n\n\n\n\n규정 준수\n음악 웹사이트 데이터 수집 목적으로 설계된 크롤러 사용\n저작권\n\n\n\n\n\n\n\n크롤러는 웹 페이지상의 링크를 따라가며 웹사이트를 스캔한다.\n이를 구현하기 위해서는 웹 페이지에서 URL 링크를 찾아야한다.\nHTML링크는 &lt;a href=\"URL\"와 같은 형식으로 이루어져 있다.\npython의 find() 함수와 slice 기능을 사용하여 링크 추출 기능을 구현한다.\n\nprocedure CrawlerThread(frontier)\n    while not frontier.done() do\n        website := frontier.nextSite()\n        url := website.nextURL()\n        if website.permitsCrawl(url) then\n            text := retrieveURL(url)\n            storeDocument(url, text)\n            for each url in parse(text) do\n                frontier.addURL(url)\n            end for\n        end if\n        frontier.releaseSite(website)\n    end while\nend procedure\n\ncrawl frontier: data structure used for storage of URLs eligible for crawling and supporting such operations as adding URLs and selecting for crawl."
-  },
-  {
-    "objectID": "posts/Crawler/music_serach_engine.html#collaborative-filtering",
-    "href": "posts/Crawler/music_serach_engine.html#collaborative-filtering",
-    "title": "[Information Retrieval] Music Search Engine",
-    "section": "Collaborative Filtering",
-    "text": "Collaborative Filtering\n음악 추천에 쓰임"
-  },
-  {
-    "objectID": "posts/Crawler/music_serach_engine.html#audio-analysis",
-    "href": "posts/Crawler/music_serach_engine.html#audio-analysis",
-    "title": "[Information Retrieval] Music Search Engine",
-    "section": "Audio Analysis",
-    "text": "Audio Analysis"
-  },
-  {
-    "objectID": "posts/Crawler/music_serach_engine.html#references",
-    "href": "posts/Crawler/music_serach_engine.html#references",
-    "title": "[Information Retrieval] Music Search Engine",
-    "section": "References",
-    "text": "References"
   }
 ]

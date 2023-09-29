@@ -2,9 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Markdown/markdown_basics.html",
-      "/posts/Crawler/crawler.html",
-      "/posts/Crawler/music_serach_engine.html"
+      "/posts/SSH-Key/Add_SSH_key_to_Github.html",
+      "/posts/Markdown/markdown_basics.html"
     ]
   }
 ]
