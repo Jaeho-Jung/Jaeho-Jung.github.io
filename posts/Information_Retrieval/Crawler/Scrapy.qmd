@@ -1,0 +1,78 @@
+---
+title: "Scrapy"
+description: ""
+date: "2023-10-02"
+categories:
+    - Information Retrieval
+    - Crawler
+    - Scrapy
+---
+
+## 버전
+
+Scrapy 2.11
+
+## Settings
+
+### 설정 방법
+
+
+### Built-in settings References
+
+#### BOT_NAME
+
+Default: `'scrapybot'`
+
+Scrapy 프로젝트의 기본 봇 이름이다.
+
+#### CONCURRENT_ITEMS
+
+Default: `100`
+
+[item pipeline](https://docs.scrapy.org/en/latest/topics/item-pipeline.html#topics-item-pipeline)에 병렬적으로 동시에 처리할 수 있는 요소의 최댓값이다.
+
+#### CONCURRENT_REQUESTS
+
+Default: `16`
+
+Scrapy downloader에 의해 수행 될 동시 요청 개수의 최댓값이다.
+
+The maximum number of concurrent (i.e. simultaneous) requests that will be performed by the Scrapy downloader.
+
+#### CONCURRENT_REQUESTS_PER_DOMAIN
+
+Default: `8`
+
+하나의 도메인에 의해 수행 될 동시 요청 개수의 최댓값이다.
+
+#### CONCURRENT_REQUESTS_PER_IP
+
+Default: `0`
+
+하나의 IP에 의해 수행 될 동시 요청 개수의 최댓값이다.
+0이 아니면, `CONCURRENT_REQUESTS_PER_DOMAIN` 설정값은 무시되고 이 값만 사용된다.
+=> 동시성의 한계값은 도메인이 아닌 IP에 의해 적용된다.
+
+
+#### DEFAULT_REQUEST_HEADERS
+
+Default:
+```json
+{
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en",
+}
+```
+
+#### DEPTH_LIMIT
+
+Default: `0`
+
+Scope: `scrapy.spidermiddlewares.depth.DepthMiddleware`
+
+크롤링 최대 허용 깊이, 
+
+
+## References
+
+<https://docs.scrapy.org/en/latest/index.html>\
