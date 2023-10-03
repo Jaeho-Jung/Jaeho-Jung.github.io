@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-03">
-<meta name="description" content="Crawling의 정의와 평가 방법에 대해 설명한다.">
+<meta name="author" content="Jaeho Jung">
+<meta name="dcterms.date" content="2023-09-01">
 
-<title>Jaeho-Jung’s blog - Crawling의 정의</title>
+<title>Jaeho-Jung’s blog - Crawler란?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +25,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +63,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jaeho-Jung’s blog</span>
     </a>
   </div>
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -108,7 +108,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#정의" id="toc-정의" class="nav-link active" data-scroll-target="#정의">정의</a></li>
+  <li><a href="#정의" id="toc-정의" class="nav-link active" data-scroll-target="#정의">정의</a>
+  <ul class="collapse">
+  <li><a href="#spider" id="toc-spider" class="nav-link" data-scroll-target="#spider">Spider</a></li>
+  </ul></li>
+  <li><a href="#역할" id="toc-역할" class="nav-link" data-scroll-target="#역할">역할</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#정책" id="toc-정책" class="nav-link" data-scroll-target="#정책">정책</a></li>
+  <li><a href="#규약" id="toc-규약" class="nav-link" data-scroll-target="#규약">규약</a>
+  <ul class="collapse">
+  <li><a href="#robots.txt" id="toc-robots.txt" class="nav-link" data-scroll-target="#robots.txt">robots.txt</a></li>
+  </ul></li>
   <li><a href="#평가-방법" id="toc-평가-방법" class="nav-link" data-scroll-target="#평가-방법">평가 방법</a>
   <ul class="collapse">
   <li><a href="#freshness" id="toc-freshness" class="nav-link" data-scroll-target="#freshness">Freshness</a></li>
@@ -123,27 +133,28 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Crawling의 정의</h1>
+<h1 class="title">Crawler란?</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Information Retrieval</div>
-    <div class="quarto-category">Crawler</div>
+    <div class="quarto-category">information retrieval</div>
+    <div class="quarto-category">crawler</div>
   </div>
   </div>
 
-<div>
-  <div class="description">
-    Crawling의 정의와 평가 방법에 대해 설명한다.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jaeho Jung </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 3, 2023</p>
+      <p class="date">September 1, 2023</p>
     </div>
   </div>
   
@@ -156,11 +167,6 @@ ul.task-list li input[type="checkbox"] {
 <section id="정의" class="level2">
 <h2 class="anchored" data-anchor-id="정의">정의</h2>
 <p>자동으로 웹페이지를 찾고 다운로드하는 프로그램</p>
-<ul>
-<li><code>crawling</code>: 자동으로 웹 페이지를 찾고 하는 작업</li>
-<li><code>web crawler</code>: <code>crawling</code>을 수행하는 프로그램</li>
-<li><code>Spider</code>: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.</li>
-</ul>
 <blockquote class="blockquote">
 <table class="table">
 <tbody>
@@ -171,35 +177,78 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <p>웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare</p>
 </blockquote>
+<section id="spider" class="level3">
+<h3 class="anchored" data-anchor-id="spider">Spider</h3>
+<p>World Wide Web 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.</p>
+</section>
+</section>
+<section id="역할" class="level2">
+<h2 class="anchored" data-anchor-id="역할">역할</h2>
+<ol type="1">
+<li>downloading pages</li>
+<li>finding URLs.</li>
+</ol>
+<p><code>seeds</code>: set of URLs given to it as parameters</p>
+</section>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<ol type="1">
+<li><code>웹의 규모</code>: 웹의 규모는 매우 크며 매 순간 생성되고 있기 때문에 얼마나 많은 웹페이지가 존재하는지 측정할 수 없다. 대부분의 조직들은 웹페이지를 저장할 수 있는 저장공간이 부족하지만 freshness를 유지하기 위해 끊임없이 새 문서들을 저장해야 한다.</li>
+<li><code>규약</code>: 웹사이트의 주인이 크롤링을 원치 않을 수 있다.</li>
+</ol>
+</section>
+<section id="정책" class="level2">
+<h2 class="anchored" data-anchor-id="정책">정책</h2>
+</section>
+<section id="규약" class="level2">
+<h2 class="anchored" data-anchor-id="규약">규약</h2>
+<section id="robots.txt" class="level3">
+<h3 class="anchored" data-anchor-id="robots.txt">robots.txt</h3>
+<p><a href="http://www.robotstxt.org/" class="uri">http://www.robotstxt.org/</a><br>
+<em>The Robots Exclusion Protocol.</em><br>
+</p>
+<ul>
+<li><code>정의</code>: 사이트나 문서에 대한 로봇들의 접근을 제어하기 위한 표준 규약이다.</li>
+<li><code>작동 방식</code>: 로봇이 웹사이트의 URL에 접근하기 전에, 해당 웹사이트의 robots.txt 파일을 확인하여 규약에 따른다.</li>
+<li><code>위치</code>: 웹사이트의 최상위 경로에 존재한다.</li>
+</ul>
+<section id="urllib.robotparser" class="level4">
+<h4 class="anchored" data-anchor-id="urllib.robotparser">urllib.robotparser</h4>
+<p><a href="https://docs.python.org/3/library/urllib.robotparser.html" class="uri">https://docs.python.org/3/library/urllib.robotparser.html</a><br>
+</p>
+</section>
+</section>
 </section>
 <section id="평가-방법" class="level2">
 <h2 class="anchored" data-anchor-id="평가-방법">평가 방법</h2>
 <section id="freshness" class="level3">
 <h3 class="anchored" data-anchor-id="freshness">Freshness</h3>
-<ul>
-<li>웹 상의 문서들은 <code>create</code>, <code>update</code>, <code>delete</code>의 동작을 반복한다. 크롤러는 이러한 문서들의 변경 사항들을 빠르게 수집해야 한다.</li>
-<li>웹의 규모는 매우 크며 매 순간 생성되고 있기 때문에 얼마나 많은 웹페이지가 존재하는지 측정할 수 없다.</li>
-<li>대부분의 조직들은 웹페이지를 저장할 수 있는 저장공간이 부족하지만 freshness를 유지하기 위해 끊임없이 새 문서들을 저장해야 한다.</li>
-</ul>
 </section>
 <section id="coverage" class="level3">
 <h3 class="anchored" data-anchor-id="coverage">Coverage</h3>
-<ul>
-<li>검색엔진의 관점에서 크롤러가 얼마나 많은 웹 페이지를 수집하는지는 중요한 척도가 된다.</li>
-<li>웹의 규모는 매우 크기 때문에, 유효한 문서를 효율적으로 찾아 저장해야 한다.</li>
-</ul>
 </section>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li><a href="https://ciir.cs.umass.edu/downloads/SEIRiP.pdf">SEIRiP</a><br>
-</li>
-<li><a href="https://www.cloudflare.com/ko-kr/learning/bots/what-is-a-web-crawler/">웹 크롤러란? | 웹 스파이더의 작동 원리 - Cloudflare</a><br>
-</li>
-<li><a href="https://en.wikipedia.org/wiki/Web_crawler">Web Crawler - Wikipedia</a><br>
-</li>
-</ul>
+<p>문서</p>
+<p><a href="http://www.robotstxt.org/" class="uri">http://www.robotstxt.org/</a><br>
+<a href="https://www.cloudflare.com/ko-kr/learning/bots/what-is-a-web-crawler/" class="uri">https://www.cloudflare.com/ko-kr/learning/bots/what-is-a-web-crawler/</a><br>
+<a href="https://policy.naver.com/policy/search_policy.html" class="uri">https://policy.naver.com/policy/search_policy.html</a><br>
+<a href="https://en.wikipedia.org/wiki/Web_crawler" class="uri">https://en.wikipedia.org/wiki/Web_crawler</a><br>
+<a href="https://ciir.cs.umass.edu/downloads/SEIRiP.pdf" class="uri">https://ciir.cs.umass.edu/downloads/SEIRiP.pdf</a><br>
+<a href="https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=ko" class="uri">https://developers.google.com/search/docs/crawling-indexing/overview-google-crawlers?hl=ko</a><br>
+</p>
+<p>오픈소스 크롤러 <a href="https://help.oncrawl.com/en/articles/2767544-oncrawl-crawler-what-counts-as-a-single-url" class="uri">https://help.oncrawl.com/en/articles/2767544-oncrawl-crawler-what-counts-as-a-single-url</a><br>
+<a href="https://github.com/scrapy/scrapy/blob/2.11/scrapy/robotstxt.py" class="uri">https://github.com/scrapy/scrapy/blob/2.11/scrapy/robotstxt.py</a><br>
+코드</p>
+<p><a href="https://nwpct1.hatenablog.com/entry/python-search-engine" class="uri">https://nwpct1.hatenablog.com/entry/python-search-engine</a><br>
+</p>
+<p>논문</p>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S1389128600000578" class="uri">https://www.sciencedirect.com/science/article/abs/pii/S1389128600000578</a><br>
+<a href="https://proceedings.neurips.cc/paper/2013/hash/b3ba8f1bee1238a2f37603d90b58898d-Abstract.html" class="uri">https://proceedings.neurips.cc/paper/2013/hash/b3ba8f1bee1238a2f37603d90b58898d-Abstract.html</a><br>
+</p>
+<p>책 <a href="https://ciir.cs.umass.edu/downloads/SEIRiP.pdf" class="uri">https://ciir.cs.umass.edu/downloads/SEIRiP.pdf</a><br>
+</p>
 
 
 </section>

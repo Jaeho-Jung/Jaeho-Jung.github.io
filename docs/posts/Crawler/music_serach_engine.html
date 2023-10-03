@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2023-10-03">
-<meta name="description" content="Crawling의 정의와 평가 방법에 대해 설명한다.">
+<meta name="author" content="Jaeho Jung">
+<meta name="dcterms.date" content="2023-01-01">
+<meta name="description" content="음악 검색 엔진 Informaiton Retrieval 프로젝트">
 
-<title>Jaeho-Jung’s blog - Crawling의 정의</title>
+<title>Jaeho-Jung’s blog - [Information Retrieval] Music Search Engine</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,22 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -73,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jaeho-Jung’s blog</span>
     </a>
   </div>
@@ -84,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -108,12 +109,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#정의" id="toc-정의" class="nav-link active" data-scroll-target="#정의">정의</a></li>
-  <li><a href="#평가-방법" id="toc-평가-방법" class="nav-link" data-scroll-target="#평가-방법">평가 방법</a>
+  <li><a href="#정보-수집" id="toc-정보-수집" class="nav-link active" data-scroll-target="#정보-수집">1. 정보 수집</a>
   <ul class="collapse">
-  <li><a href="#freshness" id="toc-freshness" class="nav-link" data-scroll-target="#freshness">Freshness</a></li>
-  <li><a href="#coverage" id="toc-coverage" class="nav-link" data-scroll-target="#coverage">Coverage</a></li>
+  <li><a href="#수집-데이터" id="toc-수집-데이터" class="nav-link" data-scroll-target="#수집-데이터">수집 데이터</a></li>
+  <li><a href="#tips" id="toc-tips" class="nav-link" data-scroll-target="#tips">tips</a></li>
+  <li><a href="#web-crawler" id="toc-web-crawler" class="nav-link" data-scroll-target="#web-crawler">Web Crawler</a></li>
   </ul></li>
+  <li><a href="#collaborative-filtering" id="toc-collaborative-filtering" class="nav-link" data-scroll-target="#collaborative-filtering">Collaborative Filtering</a></li>
+  <li><a href="#audio-analysis" id="toc-audio-analysis" class="nav-link" data-scroll-target="#audio-analysis">Audio Analysis</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -123,27 +126,32 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Crawling의 정의</h1>
+<h1 class="title">[Information Retrieval] Music Search Engine</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Information Retrieval</div>
-    <div class="quarto-category">Crawler</div>
+    <div class="quarto-category">information retrieval</div>
   </div>
   </div>
 
 <div>
   <div class="description">
-    Crawling의 정의와 평가 방법에 대해 설명한다.
+    음악 검색 엔진 Informaiton Retrieval 프로젝트
   </div>
 </div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Jaeho Jung </p>
+          </div>
+  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 3, 2023</p>
+      <p class="date">January 1, 2023</p>
     </div>
   </div>
   
@@ -153,53 +161,90 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="정의" class="level2">
-<h2 class="anchored" data-anchor-id="정의">정의</h2>
-<p>자동으로 웹페이지를 찾고 다운로드하는 프로그램</p>
+<section id="정보-수집" class="level2">
+<h2 class="anchored" data-anchor-id="정보-수집">1. 정보 수집</h2>
+<section id="수집-데이터" class="level3">
+<h3 class="anchored" data-anchor-id="수집-데이터">수집 데이터</h3>
+<ol type="1">
+<li>Music streaming services: Spotify, Apple Music, Amazon Music, YouTube Music, etc.</li>
+<li>Music databases: Discogs, MusicBrainz, AllMusic, etc.</li>
+<li>Music news websites: Pitchfork, Rolling Stone, Billboard, etc.</li>
+<li>Music review websites: Metacritic, RateYourMusic, etc.</li>
+<li>Music social media websites: Last.fm, Reddit, Twitter, etc.</li>
+<li>Websites that focus on specific genreso f music</li>
+<li>Music Blogs</li>
+<li>Music Forums</li>
+<li>Lyrics website</li>
+<li>Artist Website</li>
+<li>Music Review Aggregators</li>
+</ol>
+<p><code>수집 데이터</code></p>
 <ul>
-<li><code>crawling</code>: 자동으로 웹 페이지를 찾고 하는 작업</li>
-<li><code>web crawler</code>: <code>crawling</code>을 수행하는 프로그램</li>
-<li><code>Spider</code>: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.</li>
+<li><p>Title: The title of the web page or article.</p></li>
+<li><p>Content: The main textual content of the web page.</p></li>
+<li><p>URL: The URL of the web page.</p></li>
+<li><p>Author: If available, the name of the author or contributor.</p></li>
+<li><p>Publication Date: The date when the web page was published or last updated.</p></li>
+<li><p>Tags or Categories: Music genres, artists, albums, or other relevant categories.</p></li>
+<li><p>Links: Links to other related pages within the website or to external sources.</p></li>
+<li><p>Images: Thumbnails or images associated with music albums or artists.</p></li>
+<li><p>Metadata: Any additional metadata provided on the web page, such as Song title, artist name, album name, release date, genre, etc.</p></li>
+<li><p>Lyrics: The lyrics to the song. Audio: The audio file of the song.</p></li>
+<li><p>Links to other music pages: This will help you to discover new music and build a more comprehensive index.</p></li>
+<li><p>어떤 아티스트들이 같이 언급되는지</p></li>
+<li><p>어떤 아티스트들이 같이 투어하는지</p></li>
+<li><p>어떤 아티스트에 대한 관심이 느는지</p></li>
+<li><p>어떤 아티스트에 대한 관심이 주는지</p></li>
+<li><p>최신 유행 곡 탐색</p></li>
 </ul>
-<blockquote class="blockquote">
-<table class="table">
-<tbody>
-<tr class="odd">
-<td>웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.</td>
-</tr>
-</tbody>
-</table>
-<p>웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare</p>
-</blockquote>
 </section>
-<section id="평가-방법" class="level2">
-<h2 class="anchored" data-anchor-id="평가-방법">평가 방법</h2>
-<section id="freshness" class="level3">
-<h3 class="anchored" data-anchor-id="freshness">Freshness</h3>
+<section id="tips" class="level3">
+<h3 class="anchored" data-anchor-id="tips">tips</h3>
 <ul>
-<li>웹 상의 문서들은 <code>create</code>, <code>update</code>, <code>delete</code>의 동작을 반복한다. 크롤러는 이러한 문서들의 변경 사항들을 빠르게 수집해야 한다.</li>
-<li>웹의 규모는 매우 크며 매 순간 생성되고 있기 때문에 얼마나 많은 웹페이지가 존재하는지 측정할 수 없다.</li>
-<li>대부분의 조직들은 웹페이지를 저장할 수 있는 저장공간이 부족하지만 freshness를 유지하기 위해 끊임없이 새 문서들을 저장해야 한다.</li>
+<li>규정 준수</li>
+<li>음악 웹사이트 데이터 수집 목적으로 설계된 크롤러 사용</li>
+<li>저작권</li>
 </ul>
 </section>
-<section id="coverage" class="level3">
-<h3 class="anchored" data-anchor-id="coverage">Coverage</h3>
+<section id="web-crawler" class="level3">
+<h3 class="anchored" data-anchor-id="web-crawler">Web Crawler</h3>
+<section id="url-링크-추출" class="level4">
+<h4 class="anchored" data-anchor-id="url-링크-추출">URL 링크 추출</h4>
 <ul>
-<li>검색엔진의 관점에서 크롤러가 얼마나 많은 웹 페이지를 수집하는지는 중요한 척도가 된다.</li>
-<li>웹의 규모는 매우 크기 때문에, 유효한 문서를 효율적으로 찾아 저장해야 한다.</li>
+<li>크롤러는 웹 페이지상의 링크를 따라가며 웹사이트를 스캔한다.</li>
+<li>이를 구현하기 위해서는 웹 페이지에서 URL 링크를 찾아야한다.</li>
+<li>HTML링크는 <code>&lt;a href="URL"</code>와 같은 형식으로 이루어져 있다.</li>
+<li>python의 <code>find()</code> 함수와 <code>slice</code> 기능을 사용하여 링크 추출 기능을 구현한다.</li>
+</ul>
+<pre class="pseudocode"><code>procedure CrawlerThread(frontier)
+    while not frontier.done() do
+        website := frontier.nextSite()
+        url := website.nextURL()
+        if website.permitsCrawl(url) then
+            text := retrieveURL(url)
+            storeDocument(url, text)
+            for each url in parse(text) do
+                frontier.addURL(url)
+            end for
+        end if
+        frontier.releaseSite(website)
+    end while
+end procedure</code></pre>
+<ul>
+<li><code>crawl frontier</code>: data structure used for storage of URLs eligible for crawling and supporting such operations as adding URLs and selecting for crawl.</li>
 </ul>
 </section>
+</section>
+</section>
+<section id="collaborative-filtering" class="level2">
+<h2 class="anchored" data-anchor-id="collaborative-filtering">Collaborative Filtering</h2>
+<p>음악 추천에 쓰임</p>
+</section>
+<section id="audio-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="audio-analysis">Audio Analysis</h2>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li><a href="https://ciir.cs.umass.edu/downloads/SEIRiP.pdf">SEIRiP</a><br>
-</li>
-<li><a href="https://www.cloudflare.com/ko-kr/learning/bots/what-is-a-web-crawler/">웹 크롤러란? | 웹 스파이더의 작동 원리 - Cloudflare</a><br>
-</li>
-<li><a href="https://en.wikipedia.org/wiki/Web_crawler">Web Crawler - Wikipedia</a><br>
-</li>
-</ul>
 
 
 </section>
