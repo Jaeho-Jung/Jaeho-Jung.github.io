@@ -42,11 +42,39 @@
     "text": "References\nhttps://ko.wikipedia.org/wiki/%EC%8B%9C%ED%81%90%EC%96%B4_%EC%85%B8\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent\nhttps://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account"
   },
   {
+    "objectID": "posts/Information_Retrieval/Crawler/Scrapy.html",
+    "href": "posts/Information_Retrieval/Crawler/Scrapy.html",
+    "title": "Scrapy",
+    "section": "",
+    "text": "Scrapy 2.11"
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Scrapy.html#버전",
+    "href": "posts/Information_Retrieval/Crawler/Scrapy.html#버전",
+    "title": "Scrapy",
+    "section": "",
+    "text": "Scrapy 2.11"
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Scrapy.html#settings",
+    "href": "posts/Information_Retrieval/Crawler/Scrapy.html#settings",
+    "title": "Scrapy",
+    "section": "Settings",
+    "text": "Settings\n\n설정 방법\n\n\nBuilt-in settings References\n\nBOT_NAME\nDefault: 'scrapybot'\nScrapy 프로젝트의 기본 봇 이름이다.\n\n\nCONCURRENT_ITEMS\nDefault: 100\nitem pipeline에 병렬적으로 동시에 처리할 수 있는 요소의 최댓값이다.\n\n\nCONCURRENT_REQUESTS\nDefault: 16\nScrapy downloader에 의해 수행 될 동시 요청 개수의 최댓값이다.\nThe maximum number of concurrent (i.e. simultaneous) requests that will be performed by the Scrapy downloader.\n\n\nCONCURRENT_REQUESTS_PER_DOMAIN\nDefault: 8\n하나의 도메인에 의해 수행 될 동시 요청 개수의 최댓값이다.\n\n\nCONCURRENT_REQUESTS_PER_IP\nDefault: 0\n하나의 IP에 의해 수행 될 동시 요청 개수의 최댓값이다. 0이 아니면, CONCURRENT_REQUESTS_PER_DOMAIN 설정값은 무시되고 이 값만 사용된다. =&gt; 동시성의 한계값은 도메인이 아닌 IP에 의해 적용된다.\n\n\nDEFAULT_REQUEST_HEADERS\nDefault:\n{\n    \"Accept\": \"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\",\n    \"Accept-Language\": \"en\",\n}\n\n\nDEPTH_LIMIT\nDefault: 0\nScope: scrapy.spidermiddlewares.depth.DepthMiddleware\n크롤링 최대 허용 깊이,"
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Scrapy.html#references",
+    "href": "posts/Information_Retrieval/Crawler/Scrapy.html#references",
+    "title": "Scrapy",
+    "section": "References",
+    "text": "References\nhttps://docs.scrapy.org/en/latest/index.html"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jaeho-Jung's blog",
     "section": "",
-    "text": "Github에 SSH key 등록하기 for Windows\n\n\n\n\n\n\n\nguide\n\n\ngithub\n\n\nssh key\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMarkdown 기초 문법\n\n\n\n\n\n\n\nguide\n\n\nmarkdown\n\n\nsyntax\n\n\n\n\nMarkdown 소개 및 기초 문법 정리\n\n\n\n\n\n\nSep 15, 2023\n\n\n\n\n\n\nNo matching items"
+    "text": "Crawler의 정의\n\n\n\n\n\n\n\nInformation Retrieval\n\n\nCrawler\n\n\n\n\nCrawler의 정의와 평가 방법에 대해 설명한다.\n\n\n\n\n\n\nOct 3, 2023\n\n\n\n\n\n\n  \n\n\n\n\nScrapy\n\n\n\n\n\n\n\nInformation Retrieval\n\n\nCrawler\n\n\nScrapy\n\n\n\n\n\n\n\n\n\n\n\nOct 2, 2023\n\n\n\n\n\n\n  \n\n\n\n\nGithub에 SSH key 등록하기 for Windows\n\n\n\n\n\n\n\nguide\n\n\ngithub\n\n\nssh key\n\n\n\n\n\n\n\n\n\n\n\nSep 29, 2023\n\n\n\n\n\n\n  \n\n\n\n\nMarkdown 기초 문법\n\n\n\n\n\n\n\nguide\n\n\nmarkdown\n\n\nsyntax\n\n\n\n\nMarkdown 소개 및 기초 문법 정리\n\n\n\n\n\n\nSep 15, 2023\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -54,6 +82,34 @@
     "title": "About",
     "section": "",
     "text": "About this blog"
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Crawler_definition.html",
+    "href": "posts/Information_Retrieval/Crawler/Crawler_definition.html",
+    "title": "Crawler의 정의",
+    "section": "",
+    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\ncrawling: 자동으로 웹 페이지를 찾고 하는 작업\nweb crawler: crawling을 수행하는 프로그램\nSpider: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.\n\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare"
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Crawler_definition.html#정의",
+    "href": "posts/Information_Retrieval/Crawler/Crawler_definition.html#정의",
+    "title": "Crawler의 정의",
+    "section": "",
+    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\ncrawling: 자동으로 웹 페이지를 찾고 하는 작업\nweb crawler: crawling을 수행하는 프로그램\nSpider: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.\n\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare"
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Crawler_definition.html#평가-방법",
+    "href": "posts/Information_Retrieval/Crawler/Crawler_definition.html#평가-방법",
+    "title": "Crawler의 정의",
+    "section": "평가 방법",
+    "text": "평가 방법\n\nFreshness\n\n웹 상의 문서들은 create, update, delete의 동작을 반복한다. 크롤러는 이러한 문서들의 변경 사항들을 빠르게 수집해야 한다.\n웹의 규모는 매우 크며 매 순간 생성되고 있기 때문에 얼마나 많은 웹페이지가 존재하는지 측정할 수 없다.\n대부분의 조직들은 웹페이지를 저장할 수 있는 저장공간이 부족하지만 freshness를 유지하기 위해 끊임없이 새 문서들을 저장해야 한다.\n\n\n\nCoverage\n\n검색엔진의 관점에서 크롤러가 얼마나 많은 웹 페이지를 수집하는지는 중요한 척도가 된다.\n웹의 규모는 매우 크기 때문에, 유효한 문서를 효율적으로 찾아 저장해야 한다."
+  },
+  {
+    "objectID": "posts/Information_Retrieval/Crawler/Crawler_definition.html#references",
+    "href": "posts/Information_Retrieval/Crawler/Crawler_definition.html#references",
+    "title": "Crawler의 정의",
+    "section": "References",
+    "text": "References\n\nSEIRiP\n\n웹 크롤러란? | 웹 스파이더의 작동 원리 - Cloudflare\n\nWeb Crawler - Wikipedia"
   },
   {
     "objectID": "posts/Markdown/markdown_basics.html",

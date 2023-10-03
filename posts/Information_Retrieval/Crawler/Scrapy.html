@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-10-02">
 
-<title>Jaeho-Jung’s blog -</title>
+<title>Jaeho-Jung’s blog - Scrapy</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -61,40 +94,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -104,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Jaeho-Jung’s blog</span>
     </a>
   </div>
@@ -115,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../../about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -131,177 +133,117 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Crawler">Crawler <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Information Retrieval">Information Retrieval <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Scrapy">Scrapy <span class="quarto-category-count">(1)</span></div><div class="category" data-category="github">github <span class="quarto-category-count">(1)</span></div><div class="category" data-category="guide">guide <span class="quarto-category-count">(2)</span></div><div class="category" data-category="markdown">markdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ssh key">ssh key <span class="quarto-category-count">(1)</span></div><div class="category" data-category="syntax">syntax <span class="quarto-category-count">(1)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#버전" id="toc-버전" class="nav-link active" data-scroll-target="#버전">버전</a></li>
+  <li><a href="#settings" id="toc-settings" class="nav-link" data-scroll-target="#settings">Settings</a>
+  <ul class="collapse">
+  <li><a href="#설정-방법" id="toc-설정-방법" class="nav-link" data-scroll-target="#설정-방법">설정 방법</a></li>
+  <li><a href="#built-in-settings-references" id="toc-built-in-settings-references" class="nav-link" data-scroll-target="#built-in-settings-references">Built-in settings References</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Scrapy</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Information Retrieval</div>
+    <div class="quarto-category">Crawler</div>
+    <div class="quarto-category">Scrapy</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 2, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="버전" class="level2">
+<h2 class="anchored" data-anchor-id="버전">버전</h2>
+<p>Scrapy 2.11</p>
+</section>
+<section id="settings" class="level2">
+<h2 class="anchored" data-anchor-id="settings">Settings</h2>
+<section id="설정-방법" class="level3">
+<h3 class="anchored" data-anchor-id="설정-방법">설정 방법</h3>
+</section>
+<section id="built-in-settings-references" class="level3">
+<h3 class="anchored" data-anchor-id="built-in-settings-references">Built-in settings References</h3>
+<section id="bot_name" class="level4">
+<h4 class="anchored" data-anchor-id="bot_name">BOT_NAME</h4>
+<p>Default: <code>'scrapybot'</code></p>
+<p>Scrapy 프로젝트의 기본 봇 이름이다.</p>
+</section>
+<section id="concurrent_items" class="level4">
+<h4 class="anchored" data-anchor-id="concurrent_items">CONCURRENT_ITEMS</h4>
+<p>Default: <code>100</code></p>
+<p><a href="https://docs.scrapy.org/en/latest/topics/item-pipeline.html#topics-item-pipeline">item pipeline</a>에 병렬적으로 동시에 처리할 수 있는 요소의 최댓값이다.</p>
+</section>
+<section id="concurrent_requests" class="level4">
+<h4 class="anchored" data-anchor-id="concurrent_requests">CONCURRENT_REQUESTS</h4>
+<p>Default: <code>16</code></p>
+<p>Scrapy downloader에 의해 수행 될 동시 요청 개수의 최댓값이다.</p>
+<p>The maximum number of concurrent (i.e.&nbsp;simultaneous) requests that will be performed by the Scrapy downloader.</p>
+</section>
+<section id="concurrent_requests_per_domain" class="level4">
+<h4 class="anchored" data-anchor-id="concurrent_requests_per_domain">CONCURRENT_REQUESTS_PER_DOMAIN</h4>
+<p>Default: <code>8</code></p>
+<p>하나의 도메인에 의해 수행 될 동시 요청 개수의 최댓값이다.</p>
+</section>
+<section id="concurrent_requests_per_ip" class="level4">
+<h4 class="anchored" data-anchor-id="concurrent_requests_per_ip">CONCURRENT_REQUESTS_PER_IP</h4>
+<p>Default: <code>0</code></p>
+<p>하나의 IP에 의해 수행 될 동시 요청 개수의 최댓값이다. 0이 아니면, <code>CONCURRENT_REQUESTS_PER_DOMAIN</code> 설정값은 무시되고 이 값만 사용된다. =&gt; 동시성의 한계값은 도메인이 아닌 IP에 의해 적용된다.</p>
+</section>
+<section id="default_request_headers" class="level4">
+<h4 class="anchored" data-anchor-id="default_request_headers">DEFAULT_REQUEST_HEADERS</h4>
+<p>Default:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode json code-with-copy"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"Accept"</span><span class="fu">:</span> <span class="st">"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">"Accept-Language"</span><span class="fu">:</span> <span class="st">"en"</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="depth_limit" class="level4">
+<h4 class="anchored" data-anchor-id="depth_limit">DEPTH_LIMIT</h4>
+<p>Default: <code>0</code></p>
+<p>Scope: <code>scrapy.spidermiddlewares.depth.DepthMiddleware</code></p>
+<p>크롤링 최대 허용 깊이,</p>
+</section>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p><a href="https://docs.scrapy.org/en/latest/index.html" class="uri">https://docs.scrapy.org/en/latest/index.html</a><br>
+</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Information Retrieval,Crawler" data-listing-date-sort="1696258800000" data-listing-file-modified-sort="1696322076519" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/Information_Retrieval/Crawler/Crawler_definition.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Information_Retrieval/Crawler/Crawler_definition.html">
-<h3 class="no-anchor listing-title">
-Crawler의 정의
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Information Retrieval'); return false;">
-Information Retrieval
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Crawler'); return false;">
-Crawler
-</div>
-</div>
-<a href="./posts/Information_Retrieval/Crawler/Crawler_definition.html">
-<div class="listing-description">
-<p>Crawler의 정의와 평가 방법에 대해 설명한다.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Information_Retrieval/Crawler/Crawler_definition.html">
-<div class="listing-date">
-Oct 3, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Information Retrieval,Crawler,Scrapy" data-listing-date-sort="1696172400000" data-listing-file-modified-sort="1696319262731" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/Information_Retrieval/Crawler/Scrapy.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Information_Retrieval/Crawler/Scrapy.html">
-<h3 class="no-anchor listing-title">
-Scrapy
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Information Retrieval'); return false;">
-Information Retrieval
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Crawler'); return false;">
-Crawler
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Scrapy'); return false;">
-Scrapy
-</div>
-</div>
-<a href="./posts/Information_Retrieval/Crawler/Scrapy.html">
-<div class="listing-description">
-Scrapy 2.11
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Information_Retrieval/Crawler/Scrapy.html">
-<div class="listing-date">
-Oct 2, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="guide,github,ssh key" data-listing-date-sort="1695913200000" data-listing-file-modified-sort="1696319262740" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/SSH-Key/Add_SSH_key_to_Github.html"> <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div> </a></p>
-</div>
-<div class="body">
-<a href="./posts/SSH-Key/Add_SSH_key_to_Github.html">
-<h3 class="no-anchor listing-title">
-Github에 SSH key 등록하기 for Windows
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('guide'); return false;">
-guide
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('github'); return false;">
-github
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('ssh key'); return false;">
-ssh key
-</div>
-</div>
-<a href="./posts/SSH-Key/Add_SSH_key_to_Github.html">
-<div class="listing-description">
-시큐어 셸(Secure SHell, <strong>SSH</strong>)은 네트워크 상의 다른 컴퓨터에 로그인하거나 원격 시스템에서 명령을 실행하고 다른 시스템으로 파일을 복사할 수 있도록 해 주는 응용 프로그램 또는 그 프로토콜을 가리킨다.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/SSH-Key/Add_SSH_key_to_Github.html">
-<div class="listing-date">
-Sep 29, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="guide,markdown,syntax" data-listing-date-sort="1694703600000" data-listing-file-modified-sort="1696319262738" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28">
-<div class="thumbnail">
-<p><a href="./posts/Markdown/markdown_basics.html"> <p class="card-img-top"><img src="posts\Markdown\markdown.svg" alt="Caption"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/Markdown/markdown_basics.html">
-<h3 class="no-anchor listing-title">
-Markdown 기초 문법
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('guide'); return false;">
-guide
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('markdown'); return false;">
-markdown
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('syntax'); return false;">
-syntax
-</div>
-</div>
-<a href="./posts/Markdown/markdown_basics.html">
-<div class="listing-description">
-<p>Markdown 소개 및 기초 문법 정리</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/Markdown/markdown_basics.html">
-<div class="listing-date">
-Sep 15, 2023
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -534,6 +476,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
+</script>
+<script src="https://utteranc.es/client.js" repo="Jaeho-Jung/Jaeho-Jung.github.io" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
 </script>
 </div> <!-- /content -->
 
