@@ -88,14 +88,14 @@
     "href": "posts/Information_Retrieval/Crawler/Crawler_definition.html",
     "title": "Crawler의 정의",
     "section": "",
-    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\ncrawling: 자동으로 웹 페이지를 찾고 하는 작업\nweb crawler: crawling을 수행하는 프로그램\nSpider: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.\n\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare"
+    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\ncrawling: 자동으로 웹 페이지를 찾고 다운로드하는 작업\nweb crawler: crawling을 수행하는 프로그램\nSpider: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.\n\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare"
   },
   {
     "objectID": "posts/Information_Retrieval/Crawler/Crawler_definition.html#정의",
     "href": "posts/Information_Retrieval/Crawler/Crawler_definition.html#정의",
     "title": "Crawler의 정의",
     "section": "",
-    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\ncrawling: 자동으로 웹 페이지를 찾고 하는 작업\nweb crawler: crawling을 수행하는 프로그램\nSpider: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.\n\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare"
+    "text": "자동으로 웹페이지를 찾고 다운로드하는 프로그램\n\ncrawling: 자동으로 웹 페이지를 찾고 다운로드하는 작업\nweb crawler: crawling을 수행하는 프로그램\nSpider: 거미가 거미줄을 기어다니듯이 검색 엔진 봇이 “Web” 전체를 기어다닌다.\n\n\n\n\n\n웹 크롤러 봇은, 정리되지 않은 도서관의 모든 책을 검토하고 카드 카탈로그를 구성함으로써, 도서관을 찾는 이가 필요한 정보를 빠르고 쉽게 찾을 수 있도록 도와주는 사람과 유사합니다. 이 사람은 도서관의 책을 주제별로 분류하고 정렬할 수 있도록, 책의 제목, 요약, 본문 중 일부를 읽어 무엇에 대한 책인지 파악할 것입니다.\n\n\n\n웹 크롤러란? | 웹 스파이더의 작동 원리, Cloudflare"
   },
   {
     "objectID": "posts/Information_Retrieval/Crawler/Crawler_definition.html#평가-방법",
